@@ -1,0 +1,49 @@
+import { Link } from "react-router-dom";
+const Footer = () => {
+  return (
+    <>
+      <footer className="bg-slate-200 p-6">
+        <div className="mb-4">
+          <h2>Fitness Tracker</h2>
+          <p>Track workouts, monitor progress, stay consistent.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          <div>
+            <h3>Brand</h3>
+            <div className="grid grid-cols-1">
+              <Link to={`#`}>GitHub</Link>
+              <Link to={`#`}>LinkedIn</Link>
+              <Link to={`#`}>Twitter/X</Link>
+            </div>
+          </div>
+          <div>
+            <h3>Product Links</h3>
+            <div className="grid grid-cols-1">
+              <Link to={`#`}>Home</Link>
+              <Link to={`#`}>Dashboard</Link>
+              <Link to={`#`}>Log Workout</Link>
+              <Link to={`#`}>Workout History</Link>
+              <Link to={`#`}>Features</Link>
+            </div>
+          </div>
+          <div>
+            <h3>Resources</h3>
+            <div className="grid grid-cols-1">
+              <a target="_blank" to={`#`}>
+                GitHub Repository
+              </a>
+              <Link to={`#`}>Contact</Link>
+              <Link to={`#`}>Privacy Policy</Link>
+              <Link to={`#`}>Terms of Service</Link>
+            </div>
+          </div>
+        </div>
+        <div className="text-center mt-4">
+          &copy; {new Date().getFullYear()}  FitnessTracker. Built by Abriham Atinkut.
+        </div>
+      </footer>
+    </>
+  );
+};
+
+export default Footer;
