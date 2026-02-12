@@ -20,9 +20,20 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to={`#`}>
-              <span>Appearance</span>
-            </Link>
+            <div className="relative group ">
+              <button className="">Appearance</button>
+              <div className="absolute hidden group-hover:block bg-white py-2 px-2 rounded-md shadow-md">
+                <button className="block hover:bg-gray-200 px-4 py-1 mb-1 rounded-sm">
+                  Dark
+                </button>
+                <button className="block hover:bg-gray-200 px-4 py-1 mb-1 rounded-sm">
+                  Light
+                </button>
+                <button className="block hover:bg-gray-200 px-4 py-1 mb-1 rounded-sm">
+                  System
+                </button>
+              </div>
+            </div>
           </li>
         </ul>
       </nav>
