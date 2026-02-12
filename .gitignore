@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+webstructure.ini
+CTA.jsx
+Features.jsx

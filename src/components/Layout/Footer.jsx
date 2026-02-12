@@ -4,21 +4,21 @@ const Footer = () => {
     <>
       <footer className="bg-slate-200 p-6">
         <div className="mb-4">
-          <h2>Fitness Tracker</h2>
+          <h2 className="font-semibold ">Fitness Tracker</h2>
           <p>Track workouts, monitor progress, stay consistent.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3">
-          <div>
+          <div className="mb-4">
             <h3>Brand</h3>
-            <div className="grid grid-cols-1">
+            <div className="grid grid-cols-1 ml-2">
               <Link to={`#`}>GitHub</Link>
               <Link to={`#`}>LinkedIn</Link>
               <Link to={`#`}>Twitter/X</Link>
             </div>
           </div>
-          <div>
+          <div className="mb-4">
             <h3>Product Links</h3>
-            <div className="grid grid-cols-1">
+            <div className="grid grid-cols-1 ml-2">
               <Link to={`#`}>Home</Link>
               <Link to={`#`}>Dashboard</Link>
               <Link to={`#`}>Log Workout</Link>
@@ -26,9 +26,9 @@ const Footer = () => {
               <Link to={`#`}>Features</Link>
             </div>
           </div>
-          <div>
+          <div className="mb-4">
             <h3>Resources</h3>
-            <div className="grid grid-cols-1">
+            <div className="grid grid-cols-1 ml-2">
               <a target="_blank" to={`#`}>
                 GitHub Repository
               </a>
@@ -38,8 +38,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="text-center mt-4">
-          &copy; {new Date().getFullYear()}  FitnessTracker. Built by Abriham Atinkut.
+        <div className="text-center">
+          &copy; {new Date().getFullYear()} FitnessTracker. Built by Abriham
+          Atinkut.
         </div>
       </footer>
     </>
