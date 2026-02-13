@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <>
-      <nav className="flex justify-between items-center bg-slate-200 h-[10vh] px-6">
+      <nav className="flex justify-between items-center bg-slate-200 h-[10vh] px-6 sticky top-0 z-50">
         <div>
           <Link to={"/"} className="text-2xl font-semibold">
             Fitness Tracker
