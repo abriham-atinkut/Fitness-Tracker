@@ -32,8 +32,8 @@ const Features = () => {
   ];
 
   return (
-    <>
-      <h1 className="text-center mt-4">Features</h1>
+    <div className="text-zinc-900 bg-white dark:bg-zinc-800 dark:text-zinc-100">
+      <h1 className="text-center pt-4">Features</h1>
       <div>
         <Swiper
           modules={[Pagination, Autoplay, EffectFade]}
@@ -67,7 +67,7 @@ const Features = () => {
           ))}
         </Swiper>
       </div>
-    </>
+    </div>
   );
 };
 
