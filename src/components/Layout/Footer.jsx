@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
-      <footer className="bg-slate-200 p-6">
+      <footer className="bg-gray-100 text-gray-600 p-6 border-t border-gray-200 dark:bg-gray-950 dark:text-gray-400 dark:border-gray-800">
         <div className="mb-4">
-          <h2 className="font-semibold ">Fitness Tracker</h2>
+          <h2 className="font-semibold text-gray-800 dark:text-gray-200">Fitness Tracker</h2>
           <p>Track workouts, monitor progress, stay consistent.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="mb-4">
-            <h3>Brand</h3>
+            <h3 className="dark:text-gray-500">Brand</h3>
             <div className="grid grid-cols-1 ml-2">
               <Link to={`#`}>GitHub</Link>
               <Link to={`#`}>LinkedIn</Link>
@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
           </div>
           <div className="mb-4">
-            <h3>Product Links</h3>
+            <h3 className="dark:text-gray-500">Product Links</h3>
             <div className="grid grid-cols-1 ml-2">
               <Link to={`#`}>Home</Link>
               <Link to={`#`}>Dashboard</Link>
@@ -27,11 +27,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="mb-4">
-            <h3>Resources</h3>
+            <h3 className="dark:text-gray-500">Resources</h3>
             <div className="grid grid-cols-1 ml-2">
-              <a target="_blank" to={`#`}>
+              <Link target="_blank" to={`#`}>
                 GitHub Repository
-              </a>
+              </Link>
               <Link to={`#`}>Contact</Link>
               <Link to={`#`}>Privacy Policy</Link>
               <Link to={`#`}>Terms of Service</Link>

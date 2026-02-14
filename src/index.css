@@ -4,10 +4,14 @@
 
 @layer base {
   h1 {
-    @apply font-bold text-4xl;
+    @apply font-bold text-3xl md:text-4xl;
   }
   h3 {
     @apply font-semibold;
+  }
+
+  a {
+    @apply hover:text-blue-600;
   }
 }
 
@@ -16,6 +20,6 @@
     @apply bg-blue-600 hover:bg-blue-700  text-white shadow-lg py-2 px-6 rounded-lg active:bg-blue-800  active:translate-y-0.5 active:shadow-md transition duration-150 ease-in-out;
   }
   .btn-secondary {
-    @apply  py-2 px-6 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100;
+    @apply py-2 px-6 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-100;
   }
 }
