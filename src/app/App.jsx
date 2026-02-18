@@ -5,6 +5,7 @@ import useTheme from "../store/theme";
 import { useEffect } from "react";
 import ErrorBoundary from "../components/error/ErrorBoundary.jsx";
 import ErrorFallback from "../components/error/ErrorFallback.jsx";
+import WorkoutsPage from "../features/workouts/pages/WorkoutsPage.jsx";
 
 function App() {
   const theme = useTheme((stata) => stata.theme);
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route path="/" element={<LandingPage />} />
+            <Route path="/workouts" element={<WorkoutsPage />} />
           </Route>
         </Routes>
       </ErrorBoundary>

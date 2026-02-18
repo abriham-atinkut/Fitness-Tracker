@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 const CTA = () => {
   return (
     <>
@@ -10,8 +11,17 @@ const CTA = () => {
           </p>
         </div>
         <div>
-          <button className="btn-primary m-4">Get Started Free</button>
-          <button className="btn-secondary dark:text-zinc-100 dark:hover:bg-zinc-600">View Project On GitHub</button>
+          <Link to={`/workouts`}>
+            <button className="btn-primary m-4">Get Started Free</button>
+          </Link>
+          <Link
+            to={"https://github.com/abriham-atinkut/Fitness-Tracker"}
+            target="_blank"
+          >
+            <button className="btn-secondary dark:text-zinc-100 dark:hover:bg-zinc-600">
+              View Project On GitHub
+            </button>
+          </Link>
         </div>
       </div>
     </>

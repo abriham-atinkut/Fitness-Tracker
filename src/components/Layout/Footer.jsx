@@ -4,24 +4,33 @@ const Footer = () => {
     <>
       <footer className="bg-zinc-100 text-zinc-600 p-6 border-t border-zinc-200 dark:bg-zinc-950 dark:text-zinc-400 dark:border-zinc-800">
         <div className="mb-4">
-          <h2 className="font-semibold text-zinc-800 dark:text-zinc-200">Fitness Tracker</h2>
+          <h2 className="font-semibold text-zinc-800 dark:text-zinc-200">
+            Fitness Tracker
+          </h2>
           <p>Track workouts, monitor progress, stay consistent.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="mb-4">
             <h3 className="dark:text-zinc-500">Brand</h3>
             <div className="grid grid-cols-1 ml-2">
-              <Link to={`#`}>GitHub</Link>
-              <Link to={`#`}>LinkedIn</Link>
+              <Link to={`https://github.com/abriham-atinkut`} target="_blank">
+                GitHub
+              </Link>
+              <Link
+                to={`https://www.linkedin.com/in/abriham-atinkut/`}
+                target="_blank"
+              >
+                LinkedIn
+              </Link>
               <Link to={`#`}>Twitter/X</Link>
             </div>
           </div>
           <div className="mb-4">
             <h3 className="dark:text-zinc-500">Product Links</h3>
             <div className="grid grid-cols-1 ml-2">
-              <Link to={`#`}>Home</Link>
+              <Link to={`/`}>Home</Link>
               <Link to={`#`}>Dashboard</Link>
-              <Link to={`#`}>Log Workout</Link>
+              <Link to={`/workouts`}>Log Workout</Link>
               <Link to={`#`}>Workout History</Link>
               <Link to={`#`}>Features</Link>
             </div>
