@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/Layout/MainLayout";
-import LandingPage from "../features/landing/LandingPage";
+import LandingPage from "../features/landing/pages/LandingPage.jsx";
 import useTheme from "../store/theme";
 import { useEffect } from "react";
 import ErrorBoundary from "../components/error/ErrorBoundary.jsx";
