@@ -15,7 +15,7 @@ const ExerciseInputs = () => {
 
   return (
     <>
-      <form onSubmit={formHandled}>
+      <form onSubmit={formHandler}>
         <input
           type="text"
           className="border-2 w-full rounded-md mb-2"
