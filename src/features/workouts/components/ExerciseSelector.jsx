@@ -22,20 +22,26 @@ const ExerciseSelector = () => {
 
   return (
     <>
-      <div>
+      <div className="flex justify-start">
         <div>
-          <input
-            type="text"
-            className="border-2 outline-none rounded-md"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-        </div>
-
-        <div>
-          {visibleWorkout?.map((workout, i) => (
-            <div key={i}>{workout}</div>
-          ))}
+          <div className="mb-2">
+            <input
+              type="text"
+              className="border-2 outline-none rounded-md w-full"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search exercise..."
+            />
+          </div>
+          <div className="p-0 w-full">
+            <div className="shadow-2xl p-2 rounded-md">
+              {visibleWorkout?.map((workout, i) => (
+                <div className="p-1 w-full">
+                  <div key={i}>{workout}</div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
