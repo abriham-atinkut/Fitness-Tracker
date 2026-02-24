@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 
 const Features = () => {
-
   const slides = [
     {
       id: 1,
@@ -49,7 +48,7 @@ const Features = () => {
         >
           {slides.map((slide) => (
             <SwiperSlide key={slide.id}>
-              <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 h-[62vh] md:h-[70vh] p-6 md:p-10">
+              <div className="grid grid-cols-1 grid-rows-2 sm:grid-cols-2 sm:grid-rows-1 h-[62vh] md:h-[70vh] p-6 md:p-10">
                 <div className="flex justify-center items-center h-full ">
                   <div>
                     <h2 className="text-center font-semibold text-2xl">

@@ -16,7 +16,8 @@ const fetchExercise = async () => {
     });
 
     allName = [...allName, ...namesFromaApi];
-    url = respones.data.next;
+    // url = respones.data.next;
+    url = null;
   }
 
   return allName;

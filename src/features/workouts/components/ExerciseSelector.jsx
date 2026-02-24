@@ -36,8 +36,8 @@ const ExerciseSelector = () => {
           <div className="p-0 w-full">
             <div className="shadow-2xl p-2 rounded-md">
               {visibleWorkout?.map((workout, i) => (
-                <div className="p-1 w-full">
-                  <div key={i}>{workout}</div>
+                <div key={i} className="p-1 w-full">
+                  <div>{workout}</div>
                 </div>
               ))}
             </div>

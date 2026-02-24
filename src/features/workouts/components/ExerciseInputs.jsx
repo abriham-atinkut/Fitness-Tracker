@@ -1,26 +1,34 @@
 import { useState } from "react";
-
+import useWorkout from "../hooks/useWorkouts";
 const ExerciseInputs = () => {
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
   const [weight, setWeight] = useState("");
   const [exercise, setExercise] = useState("");
+
+  const setWorkout = useWorkout((state) => state.setWorkout);
+
   const formHandler = (e) => {
     e.preventDefault();
     if (!sets.trim() || !reps.trim() || !weight.trim()) return;
-    setSets(" ");
-    setReps(" ");
-    setWeight(" ");
+    
+    let addWorkout = { sets, reps, weight, exercise };
+    setWorkout(addWorkout);
+
+    setSets("");
+    setReps("");
+    setWeight("");
   };
 
   return (
     <>
-      <form onSubmit={formHandled}>
+      <form onSubmit={formHandler}>
         <input
           type="text"
           className="border-2 w-full rounded-md mb-2"
           value={exercise}
           placeholder="Select Exercise"
+          onChange={(e) => setExercise(e.target.value)}
         />
         <div className="flex mb-3">
           <div>
