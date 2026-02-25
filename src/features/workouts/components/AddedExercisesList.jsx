@@ -10,27 +10,28 @@ const AddedExercisesList = () => {
 
   return (
     <div>
-      <div className="mt-8 text-center bg-slate-200 rounded-lg p-2">
+      <div className="mt-4 text-center rounded-lg p-2 bg-zinc-100 dark:bg-zinc-700 ">
         {workouts?.map((workout) => (
-          <div key={workout.id} className="bg-slate-300 m-2">
+          <div
+            key={workout.id}
+            className="mb-1 p-1 rounded-md bg-zinc-200 hover:bg-zinc-300 dark:bg-zinc-800"
+          >   
             <ul>
-              <li className="flex gap-4">
+              <li className="grid grid-rows-1 grid-cols-4">
                 <p>{workout.selectedWorkout}</p>
                 <p>
                   {workout.sets}x{workout.reps}
                 </p>
-                <p>{workout.weight}</p>
+                <p>{workout.weight} kg</p>
+                <button>Delete</button>
               </li>
             </ul>
           </div>
         ))}
       </div>
 
-      <div className="text-center my-2">
-        <button
-          className="border-2 w-full py-2 rounded-lg"
-          onClick={() => savedWorkouts()}
-        >
+      <div className="text-center my-1">
+        <button className="btn-primary w-full" onClick={() => savedWorkouts()}>
           Save Workout
         </button>
       </div>

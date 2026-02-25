@@ -75,7 +75,10 @@ const ExerciseInputs = () => {
             />
           </div>
         </div>
-        <button type="submit" className="border-2 rounded-md w-full">
+        <button
+          type="submit"
+          className="btn-primary w-full mt-2"
+        >
           Add Exercises
         </button>
       </form>

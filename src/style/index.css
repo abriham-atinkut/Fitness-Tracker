@@ -13,6 +13,9 @@
   a {
     @apply hover:text-blue-600;
   }
+  input {
+    @apply outline-none dark:text-zinc-100 dark:bg-zinc-900 dark:border-none p-1;
+  }
 }
 
 @layer components {

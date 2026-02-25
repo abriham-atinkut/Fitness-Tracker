@@ -3,7 +3,7 @@ const Hero = () => {
   return (
     <>
       <div
-        className="h-[90vh] bg-[url(/src/assets/images/hero.png)] bg-cover flex items-center text-gray-800"
+        className="h-[90vh] bg-[url(/src/assets/images/hero.jpg)] bg-cover flex items-center text-gray-800"
         id="home"
       >
         <div className="ml-5 sm:ml-10 md:ml-15 lg:ml-20">
