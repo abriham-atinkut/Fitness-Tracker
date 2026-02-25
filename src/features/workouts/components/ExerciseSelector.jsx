@@ -6,7 +6,9 @@ const ExerciseSelector = () => {
   const [search, setSearch] = useState("");
   const [workouts, setWorkouts] = useState([]);
 
-  const setSelectedWorkout = useWorkout((state) => state.setSelectedWorkout);
+  const updateSelectedWorkout = useWorkout(
+    (state) => state.updateSelectedWorkout,
+  );
 
   useEffect(() => {
     // fetch exercises when component mount
@@ -42,7 +44,7 @@ const ExerciseSelector = () => {
                 <li
                   key={i}
                   className="p-1 w-full hover:bg-slate-300 cursor-pointer"
-                  onClick={() => setSelectedWorkout(workout)}
+                  onClick={() => updateSelectedWorkout(workout)}
                 >
                   <p>{workout}</p>
                 </li>

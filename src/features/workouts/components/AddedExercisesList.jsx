@@ -4,11 +4,9 @@ const AddedExercisesList = () => {
   const workouts = useWorkout((state) => state.workouts);
   const clearWorkout = useWorkout((state) => state.clearWorkout);
   const savedWorkouts = () => {
-    // localStorage.setItem("savedWorkouts", [...workouts]);
+    // when saved i need to connect to DashBoard state and that code goes in here
     clearWorkout();
-    console.log("first");
   };
-  // console.log(localStorage.getItem("savedWorkouts"));
 
   return (
     <div>

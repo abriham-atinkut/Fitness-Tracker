@@ -5,21 +5,29 @@ const ExerciseInputs = () => {
   const [reps, setReps] = useState("");
   const [weight, setWeight] = useState("");
 
-  const setWorkout = useWorkout((state) => state.setWorkout);
+  const addWorkouts = useWorkout((state) => state.addWorkouts);
   const selectedWorkout = useWorkout((state) => state.selectedWorkout);
-  const setSelectedWorkout = useWorkout((state) => state.setSelectedWorkout);
+  const updateSelectedWorkout = useWorkout(
+    (state) => state.updateSelectedWorkout,
+  );
 
   const formHandler = (e) => {
     e.preventDefault();
-    if (!sets.trim() || !reps.trim() || !weight.trim() || !selectedWorkout.trim()) return;
+    if (
+      !sets.trim() ||
+      !reps.trim() ||
+      !weight.trim() ||
+      !selectedWorkout.trim()
+    )
+      return;
 
     let addWorkout = { sets, reps, weight, selectedWorkout };
-    setWorkout(addWorkout);
+    addWorkouts(addWorkout);
 
     setSets("");
     setReps("");
     setWeight("");
-    setSelectedWorkout("");
+    updateSelectedWorkout("");
   };
 
   return (
