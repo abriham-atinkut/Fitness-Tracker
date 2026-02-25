@@ -4,20 +4,23 @@ const fetchExercise = async () => {
   let url = "https://wger.de/api/v2/exerciseinfo/";
   let allName = [];
 
-  while (url) {
-    const respones = await axios.get(url);
-
-    // extract Engilsh name only
-    const namesFromaApi = respones.data.results.map((exercise) => {
-      const englishTranslation = exercise.translations.find(
-        (translations) => translations.language === 2, // English language id
-      );
-      return englishTranslation?.name;
-    });
-
-    allName = [...allName, ...namesFromaApi];
-    // url = respones.data.next;
-    url = null;
+  try {
+    while (url) {
+      const response = await axios.get(url);
+      // extract Engilsh name only
+      const namesFromApi = response.data.results.map((exercise) => {
+        const englishTranslation = exercise.translation.find(
+          (translation) => translation.language === 2, // English language id
+        );
+        return englishTranslation?.name;
+      });
+      allName.push(...namesFromApi)
+      url = response.data.next;
+      // url = null;
+    }
+  } catch (error) {
+    console.error("Faild to fetch exercises: ", error);
+    throw error;
   }
 
   return allName;

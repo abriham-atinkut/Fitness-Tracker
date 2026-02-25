@@ -6,6 +6,7 @@ const useWorkout = create((set) => ({
     set((state) => ({
       workouts: [...state.workouts, { ...exercise, id: crypto.randomUUID() }],
     })),
+  clearWorkout: () => set((state) => ({ workouts: (state.workout = null) })),
 
   selectedWorkout: "",
   setSelectedWorkout: (query) =>

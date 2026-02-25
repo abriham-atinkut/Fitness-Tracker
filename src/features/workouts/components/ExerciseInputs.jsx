@@ -30,6 +30,7 @@ const ExerciseInputs = () => {
           className="border-2 w-full rounded-md mb-2"
           value={selectedWorkout}
           placeholder="Select Exercise"
+          readOnly
         />
         <div className="flex mb-3">
           <div>
