@@ -3,21 +3,29 @@ import useWorkout from "../hooks/useWorkouts";
 const AddedExercisesList = () => {
   const workouts = useWorkout((state) => state.workouts);
   return (
-    <>
+    <div>
       <div className="mt-8 text-center bg-slate-200 rounded-lg p-2">
         {workouts?.map((workout) => (
           <div key={workout.id} className="bg-slate-300 m-2">
             <ul>
-              <li className=" space-x-4">
-                <span>{workout.sets}</span>
-                <span>{workout.reps}</span>
-                <span>{workout.weight}</span>
+              <li className="flex gap-4">
+                <p>{workout.selectedWorkout}</p>
+                <p>
+                  {workout.sets}x{workout.reps}
+                </p>
+                <p>{workout.weight}</p>
               </li>
             </ul>
           </div>
         ))}
       </div>
-    </>
+
+      <div className="text-center my-2">
+        <button className="border-2 w-full py-2 rounded-lg">
+          Save Workout
+        </button>
+      </div>
+    </div>
   );
 };
 

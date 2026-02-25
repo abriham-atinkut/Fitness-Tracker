@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import fetchExercise from "../api/exercisesApi";
+import useWorkout from "../hooks/useWorkouts";
 
 const ExerciseSelector = () => {
   const [search, setSearch] = useState("");
   const [workouts, setWorkouts] = useState([]);
+
+  const setSelectedWorkout = useWorkout((state) => state.setSelectedWorkout);
 
   useEffect(() => {
     // fetch exercises when component mount
@@ -34,13 +37,17 @@ const ExerciseSelector = () => {
             />
           </div>
           <div className="p-0 w-full">
-            <div className="shadow-2xl p-2 rounded-md">
+            <ul className="shadow-2xl p-2 rounded-md">
               {visibleWorkout?.map((workout, i) => (
-                <div key={i} className="p-1 w-full">
-                  <div>{workout}</div>
-                </div>
+                <li
+                  key={i}
+                  className="p-1 w-full hover:bg-slate-300 cursor-pointer"
+                  onClick={() => setSelectedWorkout(workout)}
+                >
+                  <p>{workout}</p>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

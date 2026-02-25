@@ -4,20 +4,22 @@ const ExerciseInputs = () => {
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
   const [weight, setWeight] = useState("");
-  const [exercise, setExercise] = useState("");
 
   const setWorkout = useWorkout((state) => state.setWorkout);
+  const selectedWorkout = useWorkout((state) => state.selectedWorkout);
+  const setSelectedWorkout = useWorkout((state) => state.setSelectedWorkout);
 
   const formHandler = (e) => {
     e.preventDefault();
-    if (!sets.trim() || !reps.trim() || !weight.trim()) return;
-    
-    let addWorkout = { sets, reps, weight, exercise };
+    if (!sets.trim() || !reps.trim() || !weight.trim() || !selectedWorkout.trim()) return;
+
+    let addWorkout = { sets, reps, weight, selectedWorkout };
     setWorkout(addWorkout);
 
     setSets("");
     setReps("");
     setWeight("");
+    setSelectedWorkout("");
   };
 
   return (
@@ -26,9 +28,8 @@ const ExerciseInputs = () => {
         <input
           type="text"
           className="border-2 w-full rounded-md mb-2"
-          value={exercise}
+          value={selectedWorkout}
           placeholder="Select Exercise"
-          onChange={(e) => setExercise(e.target.value)}
         />
         <div className="flex mb-3">
           <div>
