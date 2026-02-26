@@ -1,9 +1,19 @@
 import { useState } from "react";
 import useWorkout from "../hooks/useWorkouts";
+
+const getToday = () => {
+  const today = new Date();
+  const year = String(today.getFullYear());
+  const month = String(today.getMonth() + 1).padStart(2, "0")
+  const day = String(today.getDay()).padStart(2, "0")
+
+  return `${year}-${month}-${day}`;
+};
 const ExerciseInputs = () => {
   const [sets, setSets] = useState("");
   const [reps, setReps] = useState("");
   const [weight, setWeight] = useState("");
+  const [date, setDate] = useState(getToday());
 
   const addWorkouts = useWorkout((state) => state.addWorkouts);
   const selectedWorkout = useWorkout((state) => state.selectedWorkout);
@@ -17,29 +27,41 @@ const ExerciseInputs = () => {
       !sets.trim() ||
       !reps.trim() ||
       !weight.trim() ||
-      !selectedWorkout.trim()
+      !selectedWorkout.trim() ||
+      !date.trim()
     )
       return;
 
-    let addWorkout = { sets, reps, weight, selectedWorkout };
+    let addWorkout = { sets, reps, weight, selectedWorkout, date };
     addWorkouts(addWorkout);
 
     setSets("");
     setReps("");
     setWeight("");
     updateSelectedWorkout("");
+    setDate(getToday());
   };
 
   return (
     <>
       <form onSubmit={formHandler}>
-        <input
-          type="text"
-          className="border-2 w-full rounded-md mb-2"
-          value={selectedWorkout}
-          placeholder="Select Exercise"
-          readOnly
-        />
+        <div>
+          <input
+            type="date"
+            className="border-2 w-full rounded-md mb-1"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            className="border-2 w-full rounded-md mb-1"
+            value={selectedWorkout}
+            placeholder="Select Exercise"
+            readOnly
+          />
+        </div>
         <div className="flex mb-3">
           <div>
             <label htmlFor="" className="block mb-1">
@@ -75,10 +97,7 @@ const ExerciseInputs = () => {
             />
           </div>
         </div>
-        <button
-          type="submit"
-          className="btn-primary w-full mt-2"
-        >
+        <button type="submit" className="btn-primary w-full mt-2">
           Add Exercises
         </button>
       </form>
