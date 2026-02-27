@@ -5,7 +5,7 @@ import ExerciseSelector from "./ExerciseSelector";
 const WorkoutForm = () => {
   return (
     <>
-      <div className="flex justify-center h-[90vh] bg-white text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100">
+      <div className="flex justify-center min-h-screen bg-white text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100">
         <div className="mt-4">
           <h1 className="text-center mb-8">Log Workout</h1>
           <div>

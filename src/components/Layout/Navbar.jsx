@@ -18,7 +18,7 @@ const Navbar = () => {
         </div>
         <ul className="flex gap-x-6">
           <li>
-            <Link to={`#`}>
+            <Link to={`/dashboard`}>
               <span className=" text-zinc-900 dark:text-zinc-100">
                 Dashboard
               </span>
