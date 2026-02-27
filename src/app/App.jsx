@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/Layout/MainLayout";
 import LandingPage from "../features/landing/pages/LandingPage.jsx";
-import useTheme from "../store/theme";
+import useTheme from "../store/useTheme.js";
 import { useEffect } from "react";
 import ErrorBoundary from "../components/error/ErrorBoundary.jsx";
 import ErrorFallback from "../components/error/ErrorFallback.jsx";

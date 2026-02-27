@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import useTheme from "../../store/theme";
+import useTheme from "../../store/useTheme";
 const matchMedia =
   window.matchMedia &&
   window.matchMedia("(prefers-color-scheme: dark)").matches;
