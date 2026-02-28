@@ -1,14 +1,30 @@
 import useWorkout from "../hooks/useWorkouts";
 
+const getSavedWorkout = () => {
+  return JSON.parse(localStorage.getItem("progressRecords") || "[]");
+};
+
 const AddedExercisesList = () => {
+
   const workouts = useWorkout((state) => state.workouts);
   const clearWorkout = useWorkout((state) => state.clearWorkout);
-  const savedWorkouts = () => {
-    // when saved i need to connect to DashBoard state and that code goes in here
+
+  const saveWorkouts = (trainingLogs) => {
+    let activityRecords = getSavedWorkout();
+    activityRecords.push(...trainingLogs);
+    localStorage.setItem("progressRecords", JSON.stringify(activityRecords));
+
     clearWorkout();
+    // localStorage.clear("progressRecords");
   };
   const reversedWorkouts = [...workouts].reverse();
-  console.log(reversedWorkouts)
+
+  console.log(
+    "localstorage",
+    JSON.parse(localStorage.getItem("progressRecords")),
+  );
+  console.log(reversedWorkouts);
+
   return (
     <div>
       <div className="mt-4 text-center rounded-lg p-2 bg-zinc-100 dark:bg-zinc-700 h-28 overflow-y-auto">
@@ -32,7 +48,10 @@ const AddedExercisesList = () => {
       </div>
 
       <div className="text-center my-1">
-        <button className="btn-primary w-full" onClick={() => savedWorkouts()}>
+        <button
+          className="btn-primary w-full"
+          onClick={() => saveWorkouts(reversedWorkouts)}
+        >
           Save Workout
         </button>
       </div>

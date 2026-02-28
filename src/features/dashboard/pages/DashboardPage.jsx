@@ -6,7 +6,7 @@ import WorkoutChart from "../components/WorkoutChart";
 const DashboardPage = () => {
   return (
     <>
-      <div className="min-h-[40vh]">
+      <div className="min-h-[90vh]">
         <ProgressCards />
         <VolumeChart />
         <WorkoutChart />
