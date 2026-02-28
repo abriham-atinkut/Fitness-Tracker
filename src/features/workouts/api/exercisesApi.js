@@ -1,6 +1,17 @@
 import axios from "axios";
 
 const fetchExercise = async () => {
+  const localStorageKey = "exerciseNames";
+  const cachedData = localStorage.getItem(localStorageKey);
+  if (cachedData) {
+    try {
+      return JSON.parse(cachedData);
+    } catch (err) {
+      console.warn("Failed to parse cached exercise data, refetching...", err);
+      // Continue to fetch from API if parsing fails
+    }
+  }
+
   let url = "https://wger.de/api/v2/exerciseinfo/";
   let allName = [];
 
@@ -16,7 +27,7 @@ const fetchExercise = async () => {
       });
       allName.push(...namesFromApi);
       url = response.data.next;
-      // url = null;  // use only when testing features to minimize api load
+      localStorage.setItem(localStorageKey, JSON.stringify(allName));
     }
   } catch (error) {
     console.error("Faild to fetch exercises: ", error);
