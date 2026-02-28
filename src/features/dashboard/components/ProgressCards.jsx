@@ -14,7 +14,7 @@ sunday.setDate(monday.getDate() + 6);
 sunday.setHours(23, 59, 59, 999); 
 
 const ProgressCards = ({ activity }) => {
-  // Total weight Lefted
+  // Total weight Lifted
   const totalWeight = activity.reduce(
     (sum, exercise) => sum + Number(exercise.weight),
     0,
@@ -45,7 +45,7 @@ const ProgressCards = ({ activity }) => {
           <p className="font-bold">
             {totalWeight} <span className="text-base">kg</span>
           </p>
-          <h2>Total weight Lefted</h2>
+          <h2>Total weight Lifted</h2>
         </Card>
         <Card>
           <p className="font-bold">{workoutsThisWeek.length} </p>
