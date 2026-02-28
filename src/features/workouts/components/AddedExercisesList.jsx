@@ -5,9 +5,9 @@ const getSavedWorkout = () => {
 };
 
 const AddedExercisesList = () => {
-
   const workouts = useWorkout((state) => state.workouts);
   const clearWorkout = useWorkout((state) => state.clearWorkout);
+  const deleteWorkout = useWorkout((state) => state.deleteWorkout);
 
   const saveWorkouts = (trainingLogs) => {
     let activityRecords = getSavedWorkout();
@@ -18,7 +18,6 @@ const AddedExercisesList = () => {
     // localStorage.clear("progressRecords");
   };
   const reversedWorkouts = [...workouts].reverse();
-
 
   return (
     <div>
@@ -35,7 +34,12 @@ const AddedExercisesList = () => {
                   {workout.sets} x {workout.reps}
                 </p>
                 <p>{workout.weight} kg</p>
-                <button>Delete</button>
+                <button
+                  onClick={() => deleteWorkout(workout.id)}
+                  className="text-red-400 hover:text-red-600"
+                >
+                  Delete
+                </button>
               </li>
             </ul>
           </div>
