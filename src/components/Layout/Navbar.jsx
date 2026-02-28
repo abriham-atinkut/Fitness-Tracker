@@ -19,19 +19,21 @@ const Navbar = () => {
         <ul className="flex gap-x-6">
           <li>
             <Link to={`/dashboard`}>
-              <span className=" text-zinc-900 dark:text-zinc-100">
+              <span className=" text-zinc-900 dark:text-zinc-100 hover:scale-105 inline-block transition-transform duration-200">
                 Dashboard
               </span>
             </Link>
           </li>
           <li>
             <Link to={"/workouts"}>
-              <span className="text-zinc-900 dark:text-zinc-100">Workouts</span>
+              <span className="text-zinc-900 dark:text-zinc-100 hover:scale-105 inline-block transition-transform duration-200">
+                Workouts
+              </span>
             </Link>
           </li>
           <li>
             <div className="relative group ">
-              <button className="">Appearance</button>
+              <button>Appearance</button>
               <div className="absolute hidden group-hover:block py-2 px-2 rounded-md shadow-md bg-white dark:bg-zinc-800">
                 <button
                   className="block  px-4 py-1 mb-1 rounded-sm hover:bg-zinc-100 dark:hover:bg-zinc-700"

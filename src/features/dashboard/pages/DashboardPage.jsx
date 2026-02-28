@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import ProgressCards from "../components/ProgressCards";
-import RecentWorkouts from "../components/RecentWorkouts";
-import VolumeChart from "../components/VolumeChart";
-import WorkoutChart from "../components/WorkoutChart";
 import ProgressChart from "../components/ProgressChart";
 
 import useActivity from "../hooks/useActivity";
@@ -22,7 +19,7 @@ const DashboardPage = () => {
   console.log(activity[0]?.selectedWorkout);
   console.log("dashboard", activity);
   return (
-    <div className="lg:m-4">
+    <div className="p-2 md:p-4  bg-white text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100">
       <div className="min-h-[90vh]">
         <ProgressCards activity={activity} />
         <div className="text-center mt-4">
@@ -33,7 +30,7 @@ const DashboardPage = () => {
             id="exercise-select"
             value={selectedExercise}
             onChange={(e) => setSelectedExercise(e.target.value)}
-            className="border p-1 rounded"
+            className="border p-1 rounded bg-white text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100"
           >
             {uniqueExercises.map((exercise) => (
               <option key={exercise} value={exercise}>

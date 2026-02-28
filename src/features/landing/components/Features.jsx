@@ -1,8 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
-import workoutImage from "../../../../public/assets/images/logWorkout.jpg";
-import motivationImage from "../../../../public/assets/images/motivation.jpg";
-import trackImage from "../../../../public/assets/images/trackProgress.jpg";
+import workoutImage from "/assets/images/logWorkout.jpg";
+import motivationImage from "/assets/images/motivation.jpg";
+import trackImage from "/assets/images/trackProgress.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
