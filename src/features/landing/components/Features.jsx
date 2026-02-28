@@ -1,5 +1,8 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, EffectFade } from "swiper/modules";
+import workoutImage from "../../../../public/assets/images/logWorkout.jpg";
+import motivationImage from "../../../../public/assets/images/motivation.jpg";
+import trackImage from "../../../../public/assets/images/trackProgress.jpg";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,21 +15,21 @@ const Features = () => {
       title: "Track Every Workout Effortlessly",
       description:
         "Log exercises, sets, reps, and weights in seconds. Stay consistent and never lose track of your progress again.",
-      image: "/public/assets/images/slide/logWorkout.jpg",
+      image: workoutImage,
     },
     {
       id: 2,
       title: "See Your Progress in Real Time",
       description:
         "Visualize strength gains, workout history, and performance trends with clean, powerful analytics.",
-      image: "/public/assets/images/slide/trackProgress.jpg",
+      image: motivationImage,
     },
     {
       id: 3,
       title: "Build Discipline. Stay Consistent.",
       description:
         "Turn your workouts into measurable progress and stay motivated with clear goals and tracking insights.",
-      image: "/public/assets/images/slide/motivation.jpg",
+      image: trackImage,
     },
   ];
 
