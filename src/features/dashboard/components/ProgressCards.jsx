@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import Card from "../../../components/ui/Card";
-import useDashboardStats from "../hooks/useDashboardStats";
 
 const today = new Date();
 const dayOfWeek = today.getDay();
@@ -8,21 +6,14 @@ const dayOfWeek = today.getDay();
 // Calculate Monday of this week
 const monday = new Date(today);
 monday.setDate(today.getDate() - (dayOfWeek === 0 ? 6 : dayOfWeek - 1));
-monday.setHours(0, 0, 0, 0); // start of the day
+monday.setHours(0, 0, 0, 0);
 
 // Calculate Sunday of this week
 const sunday = new Date(monday);
 sunday.setDate(monday.getDate() + 6);
-sunday.setHours(23, 59, 59, 999); // end of the day
+sunday.setHours(23, 59, 59, 999); 
 
-const ProgressCards = () => {
-  const [activity, setActivity] = useState([]);
-  useEffect(() => {
-    const workoutItem = useDashboardStats();
-    setActivity(workoutItem);
-  }, []);
-  console.log(activity);
-
+const ProgressCards = ({ activity }) => {
   // Total weight Lefted
   const totalWeight = activity.reduce(
     (sum, exercise) => sum + Number(exercise.weight),
