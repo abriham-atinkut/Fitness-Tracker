@@ -14,9 +14,9 @@ const fetchExercise = async () => {
         );
         return englishTranslation?.name;
       });
-      allName.push(...namesFromApi)
-      // url = response.data.next;
-      url = null;
+      allName.push(...namesFromApi);
+      url = response.data.next;
+      // url = null;  // use only when testing features to minimize api load
     }
   } catch (error) {
     console.error("Faild to fetch exercises: ", error);

@@ -16,8 +16,7 @@ const DashboardPage = () => {
   const uniqueExercises = Array.from(
     new Set(activity.map((ex) => ex.selectedWorkout)),
   );
-  console.log(activity[0]?.selectedWorkout);
-  console.log("dashboard", activity);
+
   return (
     <div className="p-2 md:p-4  bg-white text-zinc-900 dark:bg-zinc-800 dark:text-zinc-100">
       <div className="min-h-[90vh]">

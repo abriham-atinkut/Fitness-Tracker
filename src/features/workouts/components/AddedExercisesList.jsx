@@ -19,11 +19,6 @@ const AddedExercisesList = () => {
   };
   const reversedWorkouts = [...workouts].reverse();
 
-  console.log(
-    "localstorage",
-    JSON.parse(localStorage.getItem("progressRecords")),
-  );
-  console.log(reversedWorkouts);
 
   return (
     <div>

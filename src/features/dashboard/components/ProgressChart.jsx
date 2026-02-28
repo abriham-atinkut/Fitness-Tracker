@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   LineChart,
   Line,
@@ -17,10 +18,15 @@ function ProgressChart({ activity, selectedExercise }) {
     }))
     .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  console.log("chart data", data);
-  console.log("activity in chart", activity);
   if (data.length === 0) {
-    return <div>No data for this exercise</div>;
+    return (
+      <div className="min-h-[40vh] flex justify-center items-center gap-4">
+        <div>No data!</div>
+        <Link to={"/workouts"}>
+          <p className="text-blue-600">Add Workout</p>
+        </Link>
+      </div>
+    );
   }
 
   return (
